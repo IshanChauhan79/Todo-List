@@ -4,9 +4,70 @@
         <title>
             <%= title %>
         </title>
+        <link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@200&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/abada02b63.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/home.css">
+        
     </head>
     <body>
-        <h1>TO DO LIST</h1>
+        <div id="container">
+            <div id="todoapp-title">
+                <h1>TODO APP</h1>
+            </div>
+            <div id="input-form">
+                <form action="#" method="POST" id="add-task-form">
+
+
+                    <div id="disc-div">
+                        <span class="form-span">DISCRIPTION</span>
+                        <textarea id="desc" name="desc" class="scroll input-style" placeholder=" Enter the description" required></textarea>
+                    </div>
+
+
+                    <div id="ctg-div">
+                        <span class="form-span">CATEGAORY</span>
+                        <select name="ctg" class="input-style ctg-style" required>
+                            <option value="" disabled selected hidden>Please Choose...</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Personal">Personal</option>
+                        </select>
+                    </div>
+
+
+                    <div id="duedate-div">
+                        <span class="form-span">DUE DATE</span>
+                        <input type="date" id="duedate" name="duedate" class="input-style" value="yyyy-mm-dd" min="2020-01-01" max="2030-12-31" required>
+                    </div>
+
+                </form>
+            </div>
+
+
+            <div id="submit-buttons">
+                <div  class="button-div">
+                    <button id="add-task" type=submit form="add-task-form" >
+                        <i class="fas fa-plus"></i>
+                        ADD TASK
+                    </button>
+                    
+                </div>
+
+                <div  class="button-div">
+                    <button id="delete-task" type=submit form="delete-task-form" >
+                        <i class="fas fa-trash-alt"></i>
+                        DELETE TASKS
+                    </button>
+                    
+                </div>
+
+            </div>
+
+
+
+            <div id="todo-list">
+                list
+            </div>
+        </div>
     </body>
 </html>

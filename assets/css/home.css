@@ -1,4 +1,173 @@
-body{
+/* --- html + body and Common style for all --------------------------------- */
+html,body{
     margin:0;
-    background-color: blue;
+    position: relative;
+    font-family: sans-serif;
 }
+*{
+    box-sizing: border-box;
+
+}
+
+/*-----Parent container ------------------------------------------*/
+
+#container{
+    display:flex;
+    flex-direction: column;
+    width: 550px;
+    border:1px solid black;
+    margin:auto;
+    position: relative;
+    top:20px;
+}
+#container div{
+    border:1px solid black;
+    /* padding: 1px; */
+}
+
+
+
+
+/*-----title-------------------------------------------*/
+#todoapp-title{
+    height:60px;
+    width:100%;
+    text-align:center;
+    font-family: 'Rokkitt', serif;
+    color:grey;
+}
+#todoapp-title h1{
+    margin:10px 0 0;
+}
+
+
+
+
+/*----form container + common class for form----------------------*/
+#input-form{
+
+    width:100%;
+}
+
+
+#input-form div{
+    height:70px;
+    position: relative;
+    padding:3px;
+}
+
+
+.form-span{
+    margin-left:20px;
+    letter-spacing:1px;
+    font-size: 12px;
+}
+
+
+.input-style{
+    position: absolute;
+    top:20px;
+    left:20px;
+    border:0;
+    width: 90%;
+    height:60%;
+    font-size: 14px;
+    outline:none;
+    /* background-color: aqua; */
+
+
+}
+
+.scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+/* -------Discription input--------------------------------*/
+#desc-div{
+    widows: 100%;
+}
+#desc{
+    resize: none;
+}
+
+
+
+/*------ Category input-----------------------------*/
+#ctg-div{
+    width:49%;
+    display: inline-block;
+
+}
+.ctg-style{
+    width: 95%;
+    left:0;
+    padding: 0 20px;
+}
+
+/*------ Due Date input-----------------------------*/
+#duedate-div{
+    width:49%;
+    display: inline-block;
+}
+
+
+
+/* ------ submit buttons +common class-----------------------------*/
+
+#submit-buttons{
+    height:90px;
+    position: relative;
+}
+
+.button-div{
+    width: 49%;
+    height:100%;
+    display: inline-block;
+    position: relative;
+
+}
+.button-div button{
+    height: 50px;
+    width:170px;
+    top:15px;
+    position: absolute;
+    font-size:18px;
+    text-align: inherit;
+    /* color:white; */
+    border:0px;
+
+}
+
+/* ---- button for add task in list-----------*/
+
+#add-task{
+    background-color: lightgrey;
+    right:0px;
+}
+#add-task i{
+    margin-left: 5px;
+    margin-right: 15px;
+}
+#add-task:hover{
+    background-color: grey;
+}
+
+/* ---- button for delete task from list-----------*/
+
+#delete-task{
+    background-color: lightgrey;
+    left:0px;
+}
+#delete-task:hover{
+    background-color: grey;
+}
+
+
+/*------  output--------------------------------------*/
+#todo-list{
+    height:300px;
+    width:100%;
+}
+
