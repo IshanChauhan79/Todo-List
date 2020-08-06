@@ -86,7 +86,7 @@ html,body{
 
 /* -------Discription input--------------------------------*/
 #desc-div{
-    widows: 100%;
+    width: 100%;
 }
 #desc{
     resize: none;
@@ -173,18 +173,17 @@ html,body{
     width:100%;
     margin-bottom:20px;
 }
-#todo-box{
+.todo-box{
     width:95%;
     position: relative;
     left:20px
 }
-#todo-box input{
+.todo-box input{
     position: absolute;
     top:10px;
     zoom: 1.2;
-
-
-}
+    z-index:2;
+} 
 .details{
     width:90%;
     height:70px;

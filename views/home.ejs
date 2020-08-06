@@ -17,11 +17,11 @@
             <h1>TODO APP</h1>
         </div>
         <div id="input-form">
-            <form action="#" method="POST" id="add-task-form">
+            <form action="create-newtodo" method="POST" id="add-task-form">
 
 
-                <div id="disc-div">
-                    <span class="form-span">DISCRIPTION</span>
+                <div id="desc-div">
+                    <span class="form-span">DESCRIPTION</span>
                     <textarea id="desc" name="desc" class="scroll input-style" placeholder=" Enter the description"
                         required></textarea>
                 </div>
@@ -31,17 +31,16 @@
                     <span class="form-span">CATEGAORY</span>
                     <select name="ctg" class="input-style ctg-style" required>
                         <option value="" disabled selected hidden>Please Choose...</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Personal">Personal</option>
-                        <option value="Personal">Personal</option>
+                        <option value="PERSONAL">Personal</option>
+                        <option value="SCHOOL">School</option>
+                        <option value="WORK">Work</option>
                     </select>
                 </div>
 
 
                 <div id="duedate-div">
                     <span class="form-span">DUE DATE</span>
-                    <input type="date" id="duedate" name="duedate" class="input-style" value="yyyy-mm-dd"
-                        min="2020-01-01" max="2030-12-31" required>
+                    <input type="date" id="duedate" name="date" class="input-style" min="2020-01-01" max="2030-12-31" required>
                 </div>
 
             </form>
@@ -70,31 +69,36 @@
 
 
         <div id="todo-list">
-            <form id="delete-task-form">
+            <form action="delete-todo" method="POST" id="delete-task-form" >
 
-                <div id="todo-box">
-                    <input type="checkbox" value="1">
+            <% var count=0%>
+            <% for (let i of todo_list){ %>
+
+                
+                <div class="todo-box">
+                    <input type="checkbox" name="checkbox" value="<%= count%>" >
+                    <% count++ %>
                     <div class="details">
 
-                        <p class="desc-details">Appointment he meri</p>
+                        <p class="desc-details"><%= i.desc %></p>
                         <P class="date-details">
 
                             <i class="far fa-calendar-alt"></i>
-                            <span class="date-not-deleted">10-10-2000</span>
+                            <span class="date-not-deleted"><%= i.date %></span>
                             <span><del class="date-deleted display-none">10-10-2000</del></span>
 
                         </P>
                         <div class="work ctg-details display-none ">
-                            Work
+                            <%= i.ctg %>
                         </div>
-                        <div class="school ctg-details display-none">
-                            School
+                        <div class="school ctg-details ">
+                            <%= i.ctg %>
                         </div>
-                    </div>
+                    </div>                   
                 </div>
+                <%}%>
 
                 
-
 
             </form>
 
