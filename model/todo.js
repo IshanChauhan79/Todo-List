@@ -10,10 +10,10 @@ const todoSchema=new mongoose.Schema({
         required:true
     },
     date:{
-        type:Date,
+        type:String,
         required:true,
     }
 });
 
-const todo=mongoose.model('todo',todoSchema);
-module.exports=todo;
+const Todo=mongoose.model('todo',todoSchema);
+module.exports=Todo;   

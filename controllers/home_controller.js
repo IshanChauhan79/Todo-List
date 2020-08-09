@@ -1,36 +1,66 @@
+const Todo=require('../model/todo');
 
-var todoList=[
-    {
-    desc:"Appointment",
-    ctg:"WORK",
-    date:"2020-8-10"
-    },
-    {
-        desc:"Appointment",
-        ctg:"WORK",
-        date:"2020-8-10"
-    },
-]
+
 
 module.exports.home=function(req,res){
-    return res.render('home',{
-        title:"ToDoApp",
-        todo_list:todoList
-    });
+    Todo.find({},function(err,todos){
+        if(err){
+            console.log('error in finding data from db');
+            return;
+        }
+        return res.render('home',{
+            title:"ToDoApp",
+            todo_list:todos
+        });
+    })
+
+   
 };
 
+
+
 module.exports.create=function(req,res){
-    todoList.push(req.body);
-    return res.redirect('back');
+    // todoList.push(req.body);
+
+    Todo.create({
+        desc:req.body.desc,
+        date:req.body.date,
+        ctg:req.body.ctg
+    },function(err,newTodo){
+        if (err){
+            console.log("error in adding to database");
+            return;
+        }
+        console.log('****',newTodo);
+        return res.redirect('back');
+    });
+
+
 }
 
 module.exports.delete=function(req,res){
+    
+    if (req.body.checkbox!=null  ){
+        let id=req.body.checkbox;
+        if(Array.isArray(id)){
 
-    var todoIndex =null;
-    if (req.body.checkbox!=null){
-        for(let todoIndex of req.body.checkbox){
-            todoList.splice(todoIndex,1);
+            for(let todoId of id){
+                Todo.findByIdAndDelete(todoId,function(err){
+                    if(err){
+                        console.log("error in deleting from db")
+                        return;
+                    }
+                });
+            }
+        }
+        else{
+            Todo.findByIdAndDelete(id,function(err){
+                if(err){
+                    console.log("error in deleting from db")
+                    return; 
+                }
+            });
         }
     }
     return res.redirect('back');
-}
+}     
