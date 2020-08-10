@@ -3,6 +3,7 @@ html,body{
     margin:0;
     position: relative;
     font-family: sans-serif;
+    background-color: grey;
 }
 *{
     box-sizing: border-box;
@@ -15,13 +16,15 @@ html,body{
     display:flex;
     flex-direction: column;
     width: 550px;
-    border:1px solid black;
     margin:auto;
     position: relative;
     top:20px;
+    border-radius: 1rem;
+    background-color: white;
+    box-shadow:  -20px 20px 20px 0 black;
 }
-#container div{
-    border:1px solid black;
+#container>div{
+    border-top:1px solid #cadee3;
     /* padding: 1px; */
 }
 
@@ -35,6 +38,7 @@ html,body{
     text-align:center;
     font-family: 'Rokkitt', serif;
     color:grey;
+    border:0 !important;
 }
 #todoapp-title h1{
     margin:10px 0 0;
@@ -45,8 +49,11 @@ html,body{
 
 /*----form container + common class for form----------------------*/
 #input-form{
-
     width:100%;
+    color: rgb(73,80,87);
+}
+#input-form input, select{
+    color: rgb(73,80,87);
 }
 
 
@@ -54,6 +61,7 @@ html,body{
     height:70px;
     position: relative;
     padding:3px;
+    
 }
 
 
@@ -61,6 +69,8 @@ html,body{
     margin-left:20px;
     letter-spacing:1px;
     font-size: 12px;
+    font-weight: 600;
+
 }
 
 
@@ -87,6 +97,7 @@ html,body{
 /* -------Discription input--------------------------------*/
 #desc-div{
     width: 100%;
+    border-bottom:1px solid #cadee3;
 }
 #desc{
     resize: none;
@@ -98,6 +109,7 @@ html,body{
 #ctg-div{
     width:49%;
     display: inline-block;
+    border-right:1px solid #cadee3;
 
 }
 .ctg-style{
@@ -119,6 +131,7 @@ html,body{
 #submit-buttons{
     height:90px;
     position: relative;
+
 }
 
 .button-div{
@@ -135,7 +148,7 @@ html,body{
     position: absolute;
     font-size:18px;
     text-align: inherit;
-    /* color:white; */
+    color:white;
     border:0px;
 
 }
@@ -143,7 +156,7 @@ html,body{
 /* ---- button for add task in list-----------*/
 
 #add-task{
-    background-color: lightgrey;
+    background-color: #3d3a3a;
     right:0px;
 }
 #add-task i{
@@ -151,17 +164,17 @@ html,body{
     margin-right: 15px;
 }
 #add-task:hover{
-    background-color: grey;
+    background-color: #332f2f
 }
 
 /* ---- button for delete task from list-----------*/
 
 #delete-task{
-    background-color: lightgrey;
+    background-color: red;
     left:0px;
 }
 #delete-task:hover{
-    background-color: grey;
+    background-color: #f70000;
 }
 
 
@@ -169,12 +182,26 @@ html,body{
 .display-none{
     display:none;
 }
+.light-color{
+    color:#9a9da1;
+}
 #todo-list{
     width:100%;
-    margin-bottom:20px;
+    margin-bottom:30px;
+    border:0 !important;
+    max-height: 250px;
+    overflow: scroll;
+
+    background-color: #f2f2f2;
+}
+#todo-list::-webkit-scrollbar{
+    display:none;
+}
+#todo-list form>div{
+    border-top:1px solid #cadee3;
 }
 .todo-box{
-    width:95%;
+    width:93%;
     position: relative;
     left:20px
 }
@@ -212,8 +239,8 @@ html,body{
     width:100px;
     top:10px;
     right:0;
-    font-size: 20px;
-    padding-top: 8px;
+    font-size: 15px;
+    padding-top: 10px;
     text-align: center;
     color: white;
 }
@@ -221,5 +248,5 @@ html,body{
     background-color: tomato;
 }
 .school{
-    background-color: yellowgreen;
+    background-color: orange;
 }

@@ -77,16 +77,20 @@
 
                 
                 <div class="todo-box">
-                    <input type="checkbox" name="checkbox" value="<%= i._id%>" >
+                    <input type="checkbox" class="checkbox" name="checkbox" value="<%= i._id%>" >
                     <% count++ %>
                     <div class="details">
 
-                        <p class="desc-details"><%= i.desc %></p>
+                        <p class="desc-details">
+                            <span class="desc-not-deleted"><%= i.desc %></span>
+                            <span class="desc-deleted display-none light-color"><del><%= i.desc %></del></span>
+                        
+                        </p>
                         <P class="date-details">
 
                             <i class="far fa-calendar-alt"></i>
                             <span class="date-not-deleted"><%= i.date %></span>
-                            <span><del class="date-deleted display-none">10-10-2000</del></span>
+                            <span><del class="date-deleted display-none light-color"><%= i.date %></del></span>
 
                         </P>
                         <div class="ctg-color  ctg-details ">
@@ -106,6 +110,7 @@
     </div>
 
     <script type="text/javascript" src="/js/home_ctg.js"></script>
+    <script type="text/javascript" src="/js/home_delete.js"></script>
 
 </body>
 
